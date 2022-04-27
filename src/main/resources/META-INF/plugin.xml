@@ -1,13 +1,35 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.jzelenjak.suspiciousplugin</id>
-    <name>suspiciousplugin</name>
-    <vendor>jzelenjak</vendor>
+    <name>Suspiciousplugin</name>
+    <version>0.0.1</version>
+    <vendor email="jegorkin@mail.ru">jzelenjak</vendor>
+
+    <description>
+        <![CDATA[
+            <p>A very suspicious plugin. Developed with the help of the great Amogus</p>
+        ]]>
+    </description>
+
+    <change-notes>A suspicious plugin has been added to the Intellij Marketplace</change-notes>
 
     <depends>com.intellij.modules.platform</depends>
 
+    <actions>
+        <group id="Suspiciousplugin.SuspiciousActions" text="SUS" description="A very suspicious action">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction"
+                    id="Suspiciousplugin.Actions.SuspiciousAction"
+                    text="SUS"
+                    description="Perform a suspicious action">
+                <keyboard-shortcut first-keystroke="control alt shift T" second-keystroke="control alt shift P" keymap="$default"/>
+            </action>
+        </group>
+    </actions>
+
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.jzelenjak.suspiciousplugin.services.MyApplicationService"/>
+        <applicationService serviceImplementation="com.github.jzelenjak.suspiciousplugin.SusIdeaDemoPluginSettings"/>
         <projectService serviceImplementation="com.github.jzelenjak.suspiciousplugin.services.MyProjectService"/>
     </extensions>
 
