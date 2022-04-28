@@ -18,12 +18,45 @@
     <actions>
         <group id="Suspiciousplugin.SuspiciousActions" text="SUS" description="A very suspicious action">
             <add-to-group group-id="MainMenu" anchor="last"/>
+
             <action
-                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction"
-                    id="Suspiciousplugin.Actions.SuspiciousAction"
-                    text="SUS"
-                    description="Perform a suspicious action">
-                <keyboard-shortcut first-keystroke="control alt shift T" second-keystroke="control alt shift P" keymap="$default"/>
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction1"
+                    id="Suspiciousplugin.Actions.SuspiciousAction1"
+                    text="Show Message Dialog"
+                    description="Perform a suspicious action by showing a message dialog">
+                <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 1" keymap="$default"/>
+            </action>
+
+            <action
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction2"
+                    id="Suspiciousplugin.Actions.SuspiciousAction2"
+                    text="Choose Folder"
+                    description="Perform a suspicious action by choosing a folder">
+                <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 2" keymap="$default"/>
+            </action>
+
+            <action
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction3"
+                    id="Suspiciousplugin.Actions.SuspiciousAction3"
+                    text="Show Custom Dialog"
+                    description="Perform a suspicious action by showing a custom dialog with mode and credentials">
+                <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 3" keymap="$default"/>
+            </action>
+
+            <action
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction4"
+                    id="Suspiciousplugin.Actions.SuspiciousAction4"
+                    text="Choose From A List"
+                    description="Perform a suspicious action by choosing an item from a list">
+                <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 4" keymap="$default"/>
+            </action>
+
+            <action
+                    class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction5"
+                    id="Suspiciousplugin.Actions.SuspiciousAction5"
+                    text="Enter Your Username"
+                    description="Perform a suspicious action by asking for a username">
+                <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 5" keymap="$default"/>
             </action>
         </group>
     </actions>
