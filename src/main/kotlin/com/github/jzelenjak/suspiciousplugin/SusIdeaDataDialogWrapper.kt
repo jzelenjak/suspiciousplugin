@@ -4,6 +4,7 @@ import com.intellij.credentialStore.CredentialAttributes
 import com.intellij.credentialStore.Credentials
 import com.intellij.ide.passwordSafe.PasswordSafe
 import com.intellij.openapi.ui.DialogWrapper
+import com.intellij.openapi.ui.Messages
 import com.intellij.ui.components.JBLabel
 import com.intellij.uiDesigner.core.AbstractLayout
 import com.intellij.util.ui.GridBag
@@ -28,8 +29,6 @@ class SusIdeaDataDialogWrapper : DialogWrapper(true) {
 
 
     init {
-        // Initialise the dialog wrapper (a call to the parent)
-        init();
         title = "SusIdeaDemo Data";
         val state = SusIdeaDemoPluginSettings.getInstance().state;
 
@@ -45,6 +44,9 @@ class SusIdeaDataDialogWrapper : DialogWrapper(true) {
         // Set the credentials to the corresponding text fields
         txtUserName.text = credentials?.userName.toString();
         txtPassword.text = credentials?.getPasswordAsString().toString();
+
+        // Initialise the dialog wrapper (a call to the parent)
+        init();
     }
 
     // Create the actual panel
@@ -86,6 +88,9 @@ class SusIdeaDataDialogWrapper : DialogWrapper(true) {
         val credentials = Credentials(username, password);
         // Store them safely
         PasswordSafe.instance.set(credentialAttributes, credentials);
+
+        Messages.showInfoMessage("Your data has been saved", "Saved")
+        close(0);
     }
 
     // A helper method to create a label

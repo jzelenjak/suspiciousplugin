@@ -1,5 +1,6 @@
 package com.github.jzelenjak.suspiciousplugin
 
+import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.ui.popup.PopupStep
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep
 
@@ -11,6 +12,7 @@ class SusPopupList(title: String, fruits: List<String>) : BaseListPopupStep<Stri
     }
 
     override fun onChosen(selectedValue: String?, finalChoice: Boolean): PopupStep<*>? {
+        Messages.showInfoMessage("You have chosen $selectedValue", "Your Choice");
         return FINAL_CHOICE;
     }
 }

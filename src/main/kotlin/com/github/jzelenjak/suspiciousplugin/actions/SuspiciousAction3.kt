@@ -17,10 +17,6 @@ class SuspiciousAction3 : AnAction() {
     // Display a custom dialog. Here we will have a state for user's credentials
     private fun showCustomDialog(e: AnActionEvent) {
         val susIdeaDataDialogWrapper = SusIdeaDataDialogWrapper();
-
-        // Check if the user have pressed ok
-        if (susIdeaDataDialogWrapper.showAndGet()) {
-            susIdeaDataDialogWrapper.close(0);
-        }
+        susIdeaDataDialogWrapper.show();
     }
 }

@@ -14,7 +14,8 @@ class SuspiciousAction4 : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         val susPopupList = SusPopupList("sus-idea-list", mutableListOf("amogus", "impostor", "sus"));
         if (e.project != null) {
-            JBPopupFactory.getInstance().createListPopup(susPopupList, 5).showCenteredInCurrentWindow(e.project!!); // `!!` is a non-null assertion
+            val l = JBPopupFactory.getInstance().createListPopup(susPopupList, 5);
+            l.showInBestPositionFor(e.dataContext)
         }
     }
 }
