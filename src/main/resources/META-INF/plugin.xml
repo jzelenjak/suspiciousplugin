@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.jzelenjak.suspiciousplugin</id>
-    <name>Suspiciousplugin</name>
+    <name>SuspiciousPlugin</name>
     <version>0.0.1</version>
     <vendor email="jegorkin@mail.ru">jzelenjak</vendor>
 
@@ -16,12 +16,12 @@
     <depends>com.intellij.modules.platform</depends>
 
     <actions>
-        <group id="Suspiciousplugin.SuspiciousActions" text="SUS" description="A very suspicious action">
+        <group id="SuspiciousPlugin.SuspiciousActions" text="SUS" description="Very suspicious actions">
             <add-to-group group-id="MainMenu" anchor="last"/>
 
             <action
                     class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction1"
-                    id="Suspiciousplugin.Actions.SuspiciousAction1"
+                    id="SuspiciousPlugin.Actions.SuspiciousAction1"
                     text="Show Message Dialog"
                     description="Perform a suspicious action by showing a message dialog">
                 <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 1" keymap="$default"/>
@@ -29,7 +29,7 @@
 
             <action
                     class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction2"
-                    id="Suspiciousplugin.Actions.SuspiciousAction2"
+                    id="SuspiciousPlugin.Actions.SuspiciousAction2"
                     text="Choose Folder"
                     description="Perform a suspicious action by choosing a folder">
                 <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 2" keymap="$default"/>
@@ -37,7 +37,7 @@
 
             <action
                     class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction3"
-                    id="Suspiciousplugin.Actions.SuspiciousAction3"
+                    id="SuspiciousPlugin.Actions.SuspiciousAction3"
                     text="Show Custom Dialog"
                     description="Perform a suspicious action by showing a custom dialog with mode and credentials">
                 <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 3" keymap="$default"/>
@@ -45,7 +45,7 @@
 
             <action
                     class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction4"
-                    id="Suspiciousplugin.Actions.SuspiciousAction4"
+                    id="SuspiciousPlugin.Actions.SuspiciousAction4"
                     text="Choose From A List"
                     description="Perform a suspicious action by choosing an item from a list">
                 <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 4" keymap="$default"/>
@@ -53,7 +53,7 @@
 
             <action
                     class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousAction5"
-                    id="Suspiciousplugin.Actions.SuspiciousAction5"
+                    id="SuspiciousPlugin.Actions.SuspiciousAction5"
                     text="Enter Your Username"
                     description="Perform a suspicious action by asking for a username">
                 <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="control alt shift 5" keymap="$default"/>
@@ -64,6 +64,8 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.github.jzelenjak.suspiciousplugin.SusIdeaDemoPluginSettings"/>
         <projectService serviceImplementation="com.github.jzelenjak.suspiciousplugin.services.MyProjectService"/>
+        <toolWindow id="SuspiciousPlugin" secondary="true" anchor="right"
+                    factoryClass="com.github.jzelenjak.suspiciousplugin.toolwindow.SuspiciousToolWindowFactory"/>
     </extensions>
 
     <applicationListeners>
