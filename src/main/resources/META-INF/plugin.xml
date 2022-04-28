@@ -1,10 +1,19 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
+
+    <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
     <id>com.github.jzelenjak.suspiciousplugin</id>
+
+    <!-- Text to display as name on Preferences/Settings | Plugin page -->
     <name>SuspiciousPlugin</name>
+
+    <!-- The version -->
     <version>0.0.1</version>
+
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
     <vendor email="jegorkin@mail.ru">jzelenjak</vendor>
 
+    <!-- Text to display as description on Preferences/Settings | Plugin page -->
     <description>
         <![CDATA[
             <p>A very suspicious plugin. Developed with the help of the great Amogus</p>
@@ -13,9 +22,12 @@
 
     <change-notes>A suspicious plugin has been added to the Intellij Marketplace</change-notes>
 
+    <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
     <depends>com.intellij.modules.platform</depends>
 
+    <!-- All suspicious actions -->
     <actions>
+        <!-- A group of suspicious actions in the group in the main menu -->
         <group id="SuspiciousPlugin.SuspiciousActions" text="SUS" description="Very suspicious actions">
             <add-to-group group-id="MainMenu" anchor="last"/>
 
@@ -60,6 +72,7 @@
             </action>
         </group>
 
+        <!-- A suspicious action for a class -->
         <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionClass"
                 id="SuspiciousPlugin.SuspiciousActionClass"
                 text=">Suspicious Action On The Class"
