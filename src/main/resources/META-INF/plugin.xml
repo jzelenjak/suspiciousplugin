@@ -24,6 +24,9 @@
 
     <!-- Indicate this plugin can be loaded in all IntelliJ Platform-based products. -->
     <depends>com.intellij.modules.platform</depends>
+    <!-- add java functinonality. See https://blog.jetbrains.com/platform/2019/06/java-functionality-extracted-as-a-plugin/ for more information -->
+    <depends>com.intellij.modules.java</depends>
+
 
     <!-- All suspicious actions -->
     <actions>
