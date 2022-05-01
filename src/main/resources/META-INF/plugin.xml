@@ -98,7 +98,13 @@
         <applicationService serviceImplementation="com.github.jzelenjak.suspiciousplugin.SusIdeaDemoPluginSettings"/>
         <projectService serviceImplementation="com.github.jzelenjak.suspiciousplugin.services.MyProjectService"/>
         <toolWindow id="SuspiciousPlugin" secondary="true" anchor="right"
-                    factoryClass="com.github.jzelenjak.suspiciousplugin.toolwindow.SuspiciousToolWindowFactory"/>
+                    factoryClass="com.github.jzelenjak.suspiciousplugin.toolwindow.SuspiciousToolWindowFactory"/><applicationService
+            serviceImplementation="com.github.jzelenjak.suspiciousplugin.settings.SusSettingsService"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.github.jzelenjak.suspiciousplugin.settings.SusSettingsConfigurable"
+                id="com.github.mitchellolsthoorn.testgenie.settings.TestGenieSettingsConfigurable"
+                displayName="Suspicious"/>
     </extensions>
 
     <applicationListeners>

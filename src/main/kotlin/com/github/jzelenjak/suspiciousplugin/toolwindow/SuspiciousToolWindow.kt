@@ -48,9 +48,9 @@ class SuspiciousToolWindow(_toolWindow: ToolWindow) {
             } else {
                 Messages.showInfoMessage(
                     "Settings are saved" +
-                            "\nnum_impostors: $numImpostors" +
-                            "\ndifficulty_level: $difficulty" +
-                            "\nis_the_impostor_red: $isImpostorRed",
+                            "\nNumber of impostors: $numImpostors" +
+                            "\nDifficulty level: $difficulty" +
+                            "\nIs the impostor red: $isImpostorRed",
                     "Saved"
                 )
             }
