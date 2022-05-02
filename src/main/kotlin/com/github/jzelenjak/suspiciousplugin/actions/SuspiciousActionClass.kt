@@ -8,6 +8,7 @@ import com.intellij.openapi.editor.Caret
 import com.intellij.openapi.editor.CaretModel
 import com.intellij.openapi.editor.Document
 import com.intellij.openapi.editor.Editor
+import com.intellij.openapi.editor.VisualPosition
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 
@@ -36,6 +37,11 @@ class SuspiciousActionClass : AnAction() {
                 val primaryCaret : Caret = editor.caretModel.primaryCaret;
                 val start : Int = primaryCaret.selectionStart;
                 val end : Int = primaryCaret.selectionEnd;
+
+                Messages.showInfoMessage(
+                    "Visual Position: ${primaryCaret.visualPosition}\nLogical Position: ${primaryCaret.logicalPosition}\nCaret offset: ${primaryCaret.offset}",
+                    "Positions"
+                );
 
                 // Replace the selection with a fixed string.
                 val susText : String = "SUS ".repeat(selectedText!!.length / 4);
