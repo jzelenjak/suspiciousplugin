@@ -83,15 +83,41 @@
             </action>
         </group>
 
-        <!-- A suspicious action for a class -->
-        <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionClass"
-                id="SuspiciousPlugin.SuspiciousActionClass"
-                text=">Suspicious Action On The Class"
-                description="Perform a suspicious action on all methods in the selected class">
+        <!-- A suspicious action for selecting some text -->
+        <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionSelection"
+                id="SuspiciousPlugin.SuspiciousActionSelection"
+                text="Suspicious Action on the Selected Text"
+                description="Perform a suspicious action on the selected text">
             <keyboard-shortcut first-keystroke="control alt shift S" second-keystroke="S" keymap="$default"/>
             <add-to-group group-id="EditorPopupMenu1.FindRefactor" anchor="after" relative-to-action="RefactoringMenu"/>
         </action>
 
+        <!-- Suspicious actions for class -->
+        <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionClass"
+                id="SuspiciousPlugin.SuspiciousActionClass"
+                text=">Suspicious Action On The Class"
+                description="Perform a suspicious action on all methods in the selected class">
+            <keyboard-shortcut first-keystroke="control alt shift C" second-keystroke="C" keymap="$default"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- Suspicious actions for method -->
+        <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionMethod"
+                 id="SuspiciousPlugin.SuspiciousActionMethod"
+                 text=">Suspicious Action On The Method"
+                 description="Perform a suspicious action on the selected method">
+            <keyboard-shortcut first-keystroke="control alt shift C" second-keystroke="M" keymap="$default"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+
+        <!-- Suspicious actions for PSI element -->
+        <action class="com.github.jzelenjak.suspiciousplugin.actions.SuspiciousActionPsi"
+                id="SuspiciousPlugin.SuspiciousActionPsi"
+                text=">Which PSI Element?"
+                description="Perform a suspicious action on the selected PSI element">
+            <keyboard-shortcut first-keystroke="control alt shift C" second-keystroke="P" keymap="$default"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
     </actions>
 
     <extensions defaultExtensionNs="com.intellij">
