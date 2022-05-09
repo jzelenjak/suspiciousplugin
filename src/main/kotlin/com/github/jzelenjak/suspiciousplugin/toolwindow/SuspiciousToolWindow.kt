@@ -26,7 +26,7 @@ class SuspiciousToolWindow(_toolWindow: ToolWindow, _project: Project) {
 
     init {
         saveButton?.addActionListener { addListenerForSaveButton(it) }
-        advancedSettingsButton?.addActionListener { addListenerForAdvacedSettingsButton(it) }
+        advancedSettingsButton?.addActionListener { addListenerForAdvancedSettingsButton(it) }
     }
 
     /**
@@ -62,7 +62,7 @@ class SuspiciousToolWindow(_toolWindow: ToolWindow, _project: Project) {
         }
     }
 
-    private val addListenerForAdvacedSettingsButton : (ActionEvent) -> Unit = {
+    private val addListenerForAdvancedSettingsButton : (ActionEvent) -> Unit = {
         ShowSettingsUtil.getInstance().showSettingsDialog(project, "Suspicious")
     }
 
