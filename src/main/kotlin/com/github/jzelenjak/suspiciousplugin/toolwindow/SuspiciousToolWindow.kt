@@ -1,5 +1,7 @@
 package com.github.jzelenjak.suspiciousplugin.toolwindow
 
+import com.intellij.openapi.options.ShowSettingsUtil
+import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.wm.ToolWindow
 import java.awt.event.ActionEvent
@@ -8,20 +10,23 @@ import javax.swing.*
 /**
  * A class for the tool window of the plugin
  */
-class SuspiciousToolWindow(_toolWindow: ToolWindow) {
+class SuspiciousToolWindow(_toolWindow: ToolWindow, _project: Project) {
 
     val toolWindow : ToolWindow = _toolWindow;
+    val project : Project = _project;
 
     // number of impostors, difficultyTextField level, is the impostor(s) red? - some parameters
     private var numImpostorsTextField: JTextField? = null
     private var difficultyTextField: JTextField? = null
     private var isImpostorRedCombobox: JComboBox<Boolean>? = null
     private var saveButton: JButton? = null
+    private var advancedSettingsButton: JButton? = null
 
     private var toolWindowPanel: JPanel? = null
 
     init {
         saveButton?.addActionListener { addListenerForSaveButton(it) }
+        advancedSettingsButton?.addActionListener { addListenerForAdvacedSettingsButton(it) }
     }
 
     /**
@@ -55,6 +60,10 @@ class SuspiciousToolWindow(_toolWindow: ToolWindow) {
                 )
             }
         }
+    }
+
+    private val addListenerForAdvacedSettingsButton : (ActionEvent) -> Unit = {
+        ShowSettingsUtil.getInstance().showSettingsDialog(project, "Suspicious")
     }
 
     /**

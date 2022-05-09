@@ -17,7 +17,7 @@ class SuspiciousToolWindowFactory : ToolWindowFactory {
      * Create the content for the tool window and register the content
      */
     override fun createToolWindowContent(project: Project, toolWindow: ToolWindow) {
-        val testGeniePanelWrapper = SuspiciousToolWindow(toolWindow);
+        val testGeniePanelWrapper = SuspiciousToolWindow(toolWindow, project);
         val contentFactory : ContentFactory = ContentFactory.SERVICE.getInstance();
         val content : Content = contentFactory.createContent(testGeniePanelWrapper.getContent(), "Suspicious Parameters", false);
         toolWindow.contentManager.addContent(content);
